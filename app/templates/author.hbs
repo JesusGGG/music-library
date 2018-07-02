@@ -1,0 +1,16 @@
+{{#link-to 'library'}}Library{{/link-to}}<br><br>
+
+<form {{action 'addAuthor' on='submit'}}>
+		<p>First name: {{input type='text' value=firstName}}</p> 		
+		<p>Last name: {{input type='text' value=lastName}}</p> 
+		<p>Nickname: {{input type='text' value=nickName}}</p> 
+		<p>Age: {{input type='text' value=age}}</p> 
+		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
+</form>
+{{#each model as |author|}}
+	<label>First name: {{author.firstName}}</label><br>
+	<label>Last name: {{author.lastName}}</label><br>
+	<label>Nickname: {{author.nickName}}</label><br>
+	<label>Age: {{author.age}}</label><br>
+	{{#link-to 'authorData' author.id}}Edit{{/link-to}}<br><br>
+{{/each}}

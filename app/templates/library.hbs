@@ -1,0 +1,16 @@
+{{#link-to 'author'}}Authors{{/link-to}}<br><br>
+
+<form {{action 'addAlbum' on='submit'}}>
+		<p>Image: {{input type='text' value=imgUrl}}</p> 		
+		<p>Title: {{input type='text' value=title}}</p> 
+		<p>Author:{{input type='text' value=author}}</p> 
+		<p>Price: {{input type='text' value=price}}</p> 
+		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
+</form>
+{{#each model as |music-book|}}
+	<img src={{music-book.imgUrl}}><br>
+	<label>Title: {{music-book.title}}</label><br>
+	<label>Author: {{music-book.author}}</label><br>
+	<label>Price: {{music-book.price}}</label><br>
+	{{#link-to 'album' music-book.id}}Edit{{/link-to}}<br><br>
+{{/each}}

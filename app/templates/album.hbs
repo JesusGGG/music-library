@@ -1,0 +1,8 @@
+<form {{action 'updateAlbum' model on='submit'}}>
+	<p>Image: {{input type='text' value=model.imgUrl}}</p> 		
+	<p>Title: {{input type='text' value=model.title}}</p> 
+	<p>Author:{{input type='text' value=model.author}}</p> 
+	<p>Price: {{input type='text' value=model.price}}</p> 
+	<button disabled={{if model.isSaving 'true' ''}}>Update</button> 
+	<button disabled={{if model.isSaving 'true' ''}} {{action 'deleteAlbum' model on='click'}}>Delete</button>
+</form>
