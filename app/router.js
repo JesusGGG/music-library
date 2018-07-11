@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('album', {path: 'album/:id'});
   this.route('author');
   this.route('authorData', {path: 'authorData/:id'});
+  this.route('shopping-cart');
 });
 
 export default Router;

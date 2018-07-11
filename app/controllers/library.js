@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+	
 	actions:{
 		addAlbum(){
 			let imgUrl = this.get('imgUrl');

@@ -16,7 +16,9 @@ export default Route.extend({
 				});
 		},
 		deleteAuthor(model){
-			model.destroyRecord()
+			var confirmDelete = confirm('Are you sure?');
+			if (confirmDelete){
+				model.destroyRecord()
 				.then(() => {
   					this.transitionTo('author');
   					alert('Deleted successfully');  					
@@ -24,6 +26,8 @@ export default Route.extend({
 				.catch(() => {
   					alert('Sorry!, An error was found');
 				});
+			}
+			
 		},
 		willTransition(){
 			let author = this.get('controller.model');
