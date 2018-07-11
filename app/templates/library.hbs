@@ -11,8 +11,7 @@
 {{#each model as |musicBook|}}
 	<img src={{musicBook.imgUrl}}><br>
 	<label>Title: {{musicBook.title}}</label><br>
-	<label>Author: {{musicBook.author}}</label><br>
+	<label>Author: {{musicBook.author.fullName}}</label><br>
 	<label>Price: {{musicBook.price}}</label><br>
 	{{#link-to 'album' musicBook.id}}Edit{{/link-to}}<br>
-	<button disabled={{if model.isSaving 'true' ''}} {{action 'addToCart' model on='click'}}>Add to cart</button><br><br>
 {{/each}}

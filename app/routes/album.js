@@ -7,7 +7,10 @@ export default Route.extend({
 	model(params){
 		return this.store.findRecord('music-book',params.id);
 	},
-	
+	model(){
+		return this.store.findAll('author');
+	},
+
 	actions:{
 		updateAlbum(album){
 			album.save()
@@ -32,6 +35,12 @@ export default Route.extend({
 		willTransition(){
 			let album = this.get('controller.model');
 			album.rollbackAttributes();
+		},
+		addToCart(model){
+			this.get('shoppingCart').get('musicBooks').pushObject(model);
+			alert('You have added "' + model.title + '" to your cart');
+			this.transitionTo('library');
 		}
+
 	}
 });
