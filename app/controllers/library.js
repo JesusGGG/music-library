@@ -8,7 +8,7 @@ export default Controller.extend({
 			let title = this.get('title');
 			let author = this.get('author');
 			let price = this.get('price');
-			let newAlbum = this.store.createRecord('music-book',{imgUrl,title,author,price});
+			let newAlbum = this.store.createRecord('musicBook',{imgUrl,title,author,price});
 			newAlbum.save();
 			this.set('imgUrl','');
 			this.set('title','');

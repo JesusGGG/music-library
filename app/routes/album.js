@@ -1,14 +1,20 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { hash } from 'rsvp';
+
 
 export default Route.extend({
 	shoppingCart: service(),
 
 	model(params){
-		return this.store.findRecord('music-book',params.id);
-	},
-	model(){
-		return this.store.findAll('author');
+
+		let musicBook = this.store.findRecord('musicBook',params.id);
+		let authors = this.store.findAll('author');
+
+		return hash ({
+			musicBook,
+			authors
+		});
 	},
 
 	actions:{
@@ -40,7 +46,13 @@ export default Route.extend({
 			this.get('shoppingCart').get('musicBooks').pushObject(model);
 			alert('You have added "' + model.title + '" to your cart');
 			this.transitionTo('library');
+		}, 
+		showAuthors () {
+			this.toggleProperty('isChangingAuthor');
+		},
+		changeAuthor (author) {
+			let album = this.get('model.musicBook');
+			album.set('author', author);
 		}
-
 	}
 });

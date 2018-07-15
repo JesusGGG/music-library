@@ -1,4 +1,12 @@
-{{#link-to 'library'}}Beginning{{/link-to}}<br><br>
+<div id="menu-wrapper">
+	<div id="menu" class="container">
+		<ul>
+			<li>{{#link-to 'library'}}Homepage{{/link-to}}</li>
+			<li>{{#link-to 'author'}}Authors{{/link-to}}</li>
+			<li>{{#link-to 'shopping-cart'}}Cart{{/link-to}}</li>
+		</ul>
+	</div>
+</div>
 <p>Total: {{sum}}</p> 		
 <p>Average: {{get-average shoppingCart.musicBooks}}</p> 
 <br><br>

@@ -7,6 +7,8 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('node_modules/materialize-css/dist/css/materialize.min.css');
+  app.import('node_modules/materialize-css/dist/js/materialize.min.css');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

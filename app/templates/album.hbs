@@ -1,19 +1,31 @@
-{{#link-to 'shopping-cart'}}Cart{{/link-to}}<br><br>
-{{#link-to 'library'}}Beginning{{/link-to}}<br><br>
-<form {{action 'updateAlbum' model on='submit'}}>
-	<p>Image: {{input type='text' value=model.imgUrl}}</p> 		
-	<p>Title: {{input type='text' value=model.title}}</p> 
-	<p>Author:{{input type='text' value=model.author.fullName}}</p> 
-	<p>Price: {{input type='number' value=model.price}}</p> 
-	<button disabled={{if model.isSaving 'true' ''}}>Update</button> 
-	<button disabled={{if model.isSaving 'true' ''}} {{action 'deleteAlbum' model on='click'}}>Delete</button>
-	<button disabled={{if model.isSaving 'true' ''}} {{action 'addToCart' model on='click'}}>Add to cart</button><br><br>
+<div id="menu-wrapper">
+	<div id="menu" class="container">
+		<ul>
+			<li>{{#link-to 'library'}}Homepage{{/link-to}}</li>
+			<li>{{#link-to 'author'}}Authors{{/link-to}}</li>
+			<li>{{#link-to 'shopping-cart'}}Cart{{/link-to}}</li>
+		</ul>
+	</div>
+</div>
 
-	<select>
-		<optgroup label='Select an author'>
-			{{#each model as |author|}}
-				<option>{{author.firstName}}</option>
+<form {{action 'updateAlbum' model.musicBook on='submit'}}>
+	<p>Image: {{input type='text' value=model.musicBook.imgUrl}}</p> 		
+	<p>Title: {{input type='text' value=model.musicBook.title}}</p> 
+	<p>Author:{{input type='text' value=model.musicBook.author.fullName}}</p> 
+	<p>Price: {{input type='number' value=model.musicBook.price}}</p> 
+	<button disabled={{if model.musicBook.isSaving 'true' ''}}>Update</button> 
+	<button disabled={{if model.musicBook.isSaving 'true' ''}} {{action 'deleteAlbum' model.musicBook on='click'}}>Delete</button>
+	<button disabled={{if model.musicBook.isSaving 'true' ''}} {{action 'addToCart' model.musicBook on='click'}}>Add to cart</button><br><br>
+
+	<p>
+		<button {{action 'showAuthors' on='click'}}>Show authors</button>
+	</p>
+		{{#if isChangingAuthor}}
+			<p>Select an author</p>
+			{{#each model.author as |author|}}
+				<p>
+					<a href="#" {{action 'changeAuthor' author on='click'}}>{{author.fullName}}</a>
+				</p>	
 			{{/each}}
-		</optgroup>
-	</select>
+		{{/if}}
 </form>

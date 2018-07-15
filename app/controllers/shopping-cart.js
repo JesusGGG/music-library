@@ -12,5 +12,5 @@ export default Controller.extend({
 			return price;
 			})
 			return getTotalPrice(prices);
-		})
+		}).volatile()
 });

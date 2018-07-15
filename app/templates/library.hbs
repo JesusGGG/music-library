@@ -1,5 +1,12 @@
-{{#link-to 'shopping-cart'}}Cart{{/link-to}}<br><br>
-{{#link-to 'author'}}Authors{{/link-to}}<br><br>
+<div id="menu-wrapper">
+	<div id="menu" class="container">
+		<ul>
+			<li>{{#link-to 'library'}}Homepage{{/link-to}}</li>
+			<li>{{#link-to 'author'}}Authors{{/link-to}}</li>
+			<li>{{#link-to 'shopping-cart'}}Cart{{/link-to}}</li>
+		</ul>
+	</div>
+</div>
 
 <form {{action 'addAlbum' on='submit'}}>
 		<p>Image: {{input type='text' value=imgUrl}}</p> 		
@@ -8,10 +15,14 @@
 		<p>Price: {{input type='number' value=price}}</p> 
 		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
 </form>
-{{#each model as |musicBook|}}
-	<img src={{musicBook.imgUrl}}><br>
-	<label>Title: {{musicBook.title}}</label><br>
-	<label>Author: {{musicBook.author.fullName}}</label><br>
-	<label>Price: {{musicBook.price}}</label><br>
-	{{#link-to 'album' musicBook.id}}Edit{{/link-to}}<br>
-{{/each}}
+
+
+<div class="item-container-g">
+	{{#each model as |musicBook|}}
+		<h2>Title: {{musicBook.title}}</h2>
+		<img class='image-container'src={{musicBook.imgUrl}}><br>
+		<label>Author: {{musicBook.author.fullName}}</label><br>
+		<label>Price: {{musicBook.price}}</label><br>
+		<button>{{#link-to 'album' musicBook.id}}Edit{{/link-to}}</button><br><br> 
+	{{/each}}
+</div>

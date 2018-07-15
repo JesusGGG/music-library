@@ -12,6 +12,9 @@ Router.map(function() {
   this.route('author');
   this.route('authorData', {path: 'authorData/:id'});
   this.route('shopping-cart');
+  this.route('sold-book');
+  this.route('sale');
+  this.route('menu');
 });
 
 export default Router;
