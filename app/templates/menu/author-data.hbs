@@ -1,4 +1,4 @@
-{{!-- <form {{action 'updateAuthor' model on='submit'}}>
+<form {{action 'updateAuthor' model on='submit'}}>
 	<p>Full name: {{input type='text' value=model.fullName}}</p>
 	<p>First name: {{input type='text' value=model.firstName}}</p> 		
 	<p>Last name: {{input type='text' value=model.lastName}}</p> 
@@ -6,4 +6,4 @@
 	<p>Age: {{input type='number' value=model.age}}</p> 
 	<button disabled={{if model.isSaving 'true' ''}}>Update</button> 
 	<button disabled={{if model.isSaving 'true' ''}} {{action 'deleteAuthor' model on='click'}}>Delete</button>
-</form> --}}
+</form>

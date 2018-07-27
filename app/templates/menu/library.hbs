@@ -1,4 +1,4 @@
-{{!-- <form {{action 'addAlbum' on='submit'}}>
+<form {{action 'addAlbum' on='submit'}}>
 		<p>Image: {{input type='text' value=imgUrl}}</p> 		
 		<p>Title: {{input type='text' value=title}}</p> 
 		<p>Author:{{input type='text' value=author}}</p> 
@@ -10,10 +10,9 @@
 <div class="item-container-g">
 	{{#each model as |musicBook|}}
 		<h2>Title: {{musicBook.title}}</h2>
-		<img class='image-container'src={{musicBook.imgUrl}}><br>
-		<label>Author: {{musicBook.author.fullName}}</label><br>
-		<label>Price: {{musicBook.price}}</label><br>
-		<button>{{#link-to 'album' musicBook.id}}Edit{{/link-to}}</button><br><br> 
+		<img class='image-container'src={{musicBook.imgUrl}}>
+		<label>Author: {{musicBook.author.fullName}}</label>
+		<label>Price: {{musicBook.price}}</label>
+		<button>{{#link-to 'menu.album' musicBook.id}}Edit{{/link-to}}</button><br><br> 
 	{{/each}}
 </div>
- --}}

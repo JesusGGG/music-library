@@ -1,0 +1,7 @@
+<p>Total: {{sum}}</p> 		
+<p>Average: {{get-average shoppingCart.musicBooks}}</p> 
+<br><br>
+{{#each shoppingCart.musicBooks as |book|}}
+	<label>Title: {{book.title}}</label><br>
+	<label>Price: {{book.price}}</label><br><br>
+{{/each}}
