@@ -1,0 +1,7 @@
+<form {{action 'addAlbum' on='submit'}}>
+		<p>Image: {{input type='text' value=imgUrl}}</p> 		
+		<p>Title: {{input type='text' value=title}}</p> 
+		<p>Author:{{input type='text' value=author}}</p> 
+		<p>Price: {{input type='number' value=price}}</p> 
+		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
+</form>

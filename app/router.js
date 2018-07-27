@@ -16,13 +16,15 @@ Router.map(function() {
   // this.route('sold-book');
   // this.route('sale');
   this.route('menu',{path: '/'}, function() {
-    this.route('library', function() {});
+    this.route('library');
     this.route('author');
     this.route('shopping-cart');
     this.route('album', {path: 'menu/album/:id'});
     this.route('author-data');
     this.route('sale');
     this.route('sold-book');
+    this.route('add-album');
+    this.route('add-author');
   });
 });
 

@@ -46,13 +46,6 @@ export default Route.extend({
 			this.get('shoppingCart').get('musicBooks').pushObject(model);
 			alert('You have added "' + model.title + '" to your cart');
 			this.transitionTo('menu.library');
-		}, 
-		showAuthors () {
-			this.toggleProperty('isChangingAuthor');
-		},
-		changeAuthor (author) {
-			let album = this.get('model.musicBook');
-			album.set('author', author);
 		}
 	}
 });

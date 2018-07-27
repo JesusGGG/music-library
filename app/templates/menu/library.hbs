@@ -1,18 +1,31 @@
-<form {{action 'addAlbum' on='submit'}}>
-		<p>Image: {{input type='text' value=imgUrl}}</p> 		
-		<p>Title: {{input type='text' value=title}}</p> 
-		<p>Author:{{input type='text' value=author}}</p> 
-		<p>Price: {{input type='number' value=price}}</p> 
-		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
-</form>
-
-
 <div class="item-container-g">
 	{{#each model as |musicBook|}}
-		<h2>Title: {{musicBook.title}}</h2>
-		<img class='image-container'src={{musicBook.imgUrl}}>
-		<label>Author: {{musicBook.author.fullName}}</label>
-		<label>Price: {{musicBook.price}}</label>
-		<button>{{#link-to 'menu.album' musicBook.id}}Edit{{/link-to}}</button><br><br> 
+		<div class="item-container">
+			<ul class="collection">
+			    <li class="collection-item avatar">
+			    	<img src={{musicBook.imgUrl}} alt="" class="circle">
+			    	<p>Title: {{musicBook.title}}</p>
+			    	<span class="title">Author: {{musicBook.author.fullName}}</span><br>
+			    	<span class="title">Price: {{musicBook.price}}</span>
+			      	{{!-- {{#link-to 'menu.album' musicBook.id}}<i class="material-icons">Edit</i>{{/link-to}} --}}
+			    	<a href="#!" class="secondary-content">
+			    		<i class="material-icons">
+			    			
+			    			{{#link-to 'menu.album' musicBook.id}}<img id="img-set-album" src='https://image.flaticon.com/icons/svg/181/181550.svg' alt="" class="circle">{{/link-to}}
+			    			
+			    		</i>
+			    	</a>
+			      	{{!--  --}}
+			      	{{!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> --}}
+			    </li>
+			</ul>
+		</div>
+		
 	{{/each}}
+</div>
+
+<div class="fixed-action-btn">
+  {{#link-to 'menu.add-album'}}<a class="btn-floating btn-large red">
+    <i class="large material-icons">+</i>
+  </a>{{/link-to}}
 </div>

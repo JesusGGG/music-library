@@ -1,10 +1,14 @@
-<form {{action 'addAuthor' on='submit'}}>
-		<p>First name: {{input type='text' value=firstName}}</p> 		
-		<p>Last name: {{input type='text' value=lastName}}</p> 
-		<p>Nickname: {{input type='text' value=nickname}}</p> 
-		<p>Age: {{input type='text' value=age}}</p> 
-		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
-</form>
+<div class="fixed-action-btn">
+  {{#link-to 'menu.add-author'}}<a class="btn-floating btn-large red">
+    <i class="large material-icons">+</i>
+  </a>{{/link-to}}
+  {{!-- <ul>
+    <li><a class="btn-floating red"><i class="material-icons">Add</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul> --}}
+</div>
 
 <div class="item-container-g">
 	{{#each model as |author|}}
@@ -12,10 +16,12 @@
 		<label>Last name: {{author.lastName}}</label><br>
 		<label>Nickname: {{author.nickname}}</label><br>
 		<label>Age: {{author.age}}</label><br>
-		{{#link-to 'menu.authorData' author.id}}Edit{{/link-to}}<br><br>
+		{{#link-to 'menu.author-data' author.id}}Edit{{/link-to}}<br><br>
 		{{delete-button
 			author=author
 			onDeleteAuthor=(action 'onDeleteAuthor')
 		}}
 	{{/each}}
 </div>
+
+

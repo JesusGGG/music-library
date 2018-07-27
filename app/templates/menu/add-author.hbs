@@ -1,0 +1,7 @@
+ <form {{action 'addAuthor' on='submit'}}>
+		<p>First name: {{input type='text' value=firstName}}</p> 		
+		<p>Last name: {{input type='text' value=lastName}}</p> 
+		<p>Nickname: {{input type='text' value=nickname}}</p> 
+		<p>Age: {{input type='text' value=age}}</p> 
+		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
+</form>

@@ -11,8 +11,7 @@
 		<button {{action 'showAuthors' on='click'}}>Show authors</button>
 	</p>
 		{{#if isChangingAuthor}}
-			<p>Select an author</p>
-			{{#each model.author as |author|}}
+			{{#each model.authors as |author|}}
 				<p>
 					<a href="#" {{action 'changeAuthor' author on='click'}}>{{author.fullName}}</a>
 				</p>	
