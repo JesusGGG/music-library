@@ -1,10 +1,25 @@
 <div id="menu-wrapper">
 	<div id="menu" class="container">
-		<ul>
-			<li>{{#link-to 'menu.library'}}Homepage{{/link-to}}</li>
-			<li>{{#link-to 'menu.author'}}Authors{{/link-to}}</li>
-			<li>{{#link-to 'menu.shopping-cart'}}Cart{{/link-to}}</li>
-		</ul>
+			<ul>
+				{{!-- <li>{{#link-to 'menu.library'}}Homepage{{/link-to}}</li> --}}
+				<li class="tab col s2">
+   	 				{{#link-to 'menu.library'}}
+   	 					<a target="_blank">Homepage</a>
+   	 				{{/link-to}}
+  				</li>				
+				{{!-- <li>{{#link-to 'menu.author'}}Authors{{/link-to}}</li> --}}
+  				<li class="tab col s2">
+   	 				{{#link-to 'menu.author'}}
+   	 					<a target="_blank">Authors</a>
+   	 				{{/link-to}}
+  				</li>  				
+				{{!-- <li>{{#link-to 'menu.shopping-cart'}}Cart{{/link-to}}</li> --}}
+  				<li class="tab col s2">
+   	 				{{#link-to 'menu.shopping-cart'}}
+   	 					<a target="_blank">Cart</a>
+   	 				{{/link-to}}
+  				</li>
+			</ul>
 	</div>
 </div>
 {{outlet}}

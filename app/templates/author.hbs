@@ -1,4 +1,4 @@
-{{!-- <form {{action 'addAuthor' on='submit'}}>
+<form {{action 'addAuthor' on='submit'}}>
 		<p>First name: {{input type='text' value=firstName}}</p> 		
 		<p>Last name: {{input type='text' value=lastName}}</p> 
 		<p>Nickname: {{input type='text' value=nickname}}</p> 
@@ -12,10 +12,10 @@
 		<label>Last name: {{author.lastName}}</label><br>
 		<label>Nickname: {{author.nickname}}</label><br>
 		<label>Age: {{author.age}}</label><br>
-		{{#link-to 'menu.authorData' author.id}}Edit{{/link-to}}<br><br>
+		{{!-- {{#link-to 'menu.author-data' author.id}}Edit{{/link-to}}<br><br> --}}
 		{{delete-button
 			author=author
 			onDeleteAuthor=(action 'onDeleteAuthor')
 		}}
 	{{/each}}
-</div> --}}
+</div>

@@ -62,14 +62,14 @@ body {
 
 .collection .collection-item:last-child {
     border-bottom: none;
-    width: 95%;
+    width: 93%;
 }
 
-ul:not(.browser-default) {
+/*ul:not(.browser-default) {
     padding-left: 0;
     list-style-type: none;
     width: 100%;
-}
+}*/
 
 .collection .collection-item.avatar:not(.circle-clipper)>.circle, .collection .collection-item.avatar :not(.circle-clipper)>.circle {
     position: absolute;
@@ -80,4 +80,12 @@ ul:not(.browser-default) {
 #img-set-album {
 	width: 24px;
 	height: 24px;
+}
+
+.row .col.s6 {
+    width: 100%;
+}
+
+.btn, .btn-large, .btn-small {
+    background-color:  #00BBD3;
 }
