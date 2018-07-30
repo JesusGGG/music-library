@@ -1,7 +1,38 @@
- <form {{action 'addAuthor' on='submit'}}>
+{{!--  <form {{action 'addAuthor' on='submit'}}>
 		<p>First name: {{input type='text' value=firstName}}</p> 		
 		<p>Last name: {{input type='text' value=lastName}}</p> 
 		<p>Nickname: {{input type='text' value=nickname}}</p> 
 		<p>Age: {{input type='text' value=age}}</p> 
-		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
-</form>
+		<p><button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}}>Add</button></p>
+</form> --}}
+
+<div class="row">
+    <form class="col s12" {{action 'addAuthor' on='submit'}}>
+    	<div class="row">
+	        <div class="input-field col s6">
+          		{{input  type="text" class="validate" value=firstName}}
+          		<label class="active" for="last_name">First name</label>
+        	</div>
+      	</div>
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{input type="text" class="validate" value=lastName}}
+          		<label class="active" for="last_name">Last name</label>
+        	</div>
+      	</div>      	
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{input type="text" class="validate" value=nickname}}
+          		<label class="active" for="last_name">Nickname</label>
+        	</div>
+      	</div>      	
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{!-- <input id="last_name" type="number" class="validate" value="{{price}}"> --}}
+          		{{input type="number" class="validate" value=age}}
+          		<label class="active" for="last_name">Age</label>
+        	</div>
+      	</div>
+      	<button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}}>Add</button>
+    </form>
+</div>

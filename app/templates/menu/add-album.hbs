@@ -1,7 +1,52 @@
-<form {{action 'addAlbum' on='submit'}}>
+{{!-- <form {{action 'addAlbum' on='submit'}}>
 		<p>Image: {{input type='text' value=imgUrl}}</p> 		
 		<p>Title: {{input type='text' value=title}}</p> 
 		<p>Author:{{input type='text' value=author}}</p> 
 		<p>Price: {{input type='number' value=price}}</p> 
 		<p><button disabled={{if model.isSaving 'true' ''}}>Add</button></p>
-</form>
+</form> --}}
+
+<div class="row">
+    <form class="col s12" {{action 'addAlbum' on='submit'}}>
+    	<div class="row">
+	        <div class="input-field col s6">
+          		{{!-- id="last_name"<input id="last_name" type="text" class="validate" value="{{imgUrl}}"> --}}
+          		{{input  type="text" class="validate" value=imgUrl}}
+          		<label class="active" for="last_name">URL</label>
+        	</div>
+      	</div>
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{!-- <input id="last_name" type="text" class="validate" value="{{title}}"> --}}
+          		{{input type="text" class="validate" value=title}}
+          		<label class="active" for="last_name">Title</label>
+        	</div>
+      	</div>      	
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{!-- <input id="last_name" type="text" class="validate" value="{{author}}"> --}}
+          		{{input type="text" class="validate" value=model.author.fullName}}
+          		<label class="active" for="last_name">Author</label>
+        	</div>
+      	</div>      	
+      	<div class="row">
+	        <div class="input-field col s6">
+          		{{!-- <input id="last_name" type="number" class="validate" value="{{price}}"> --}}
+          		{{input type="number" class="validate" value=price}}
+          		<label class="active" for="last_name">Price</label>
+        	</div>
+      	</div>
+      	<button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}}>Add</button>
+
+      	<p>
+			<button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}} {{action 'showAuthors' on='click'}}>Show authors</button>
+		</p>
+			{{#if isChangingAuthor}}
+				{{#each model.authors as |author|}}
+					<p>
+						<a href="#" disabled={{if model.isSaving 'true' ''}} {{action 'changeAuthor' author on='click'}}>{{author.fullName}}</a>
+					</p>
+				{{/each}}
+			{{/if}}
+    </form>
+</div>

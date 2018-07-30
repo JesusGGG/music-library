@@ -1,9 +1,44 @@
 <form {{action 'updateAuthor' model on='submit'}}>
-	<p>Full name: {{input type='text' value=model.fullName}}</p>
-	<p>First name: {{input type='text' value=model.firstName}}</p> 		
-	<p>Last name: {{input type='text' value=model.lastName}}</p> 
-	<p>Nickname: {{input type='text' value=model.nickname}}</p> 
-	<p>Age: {{input type='number' value=model.age}}</p> 
-	<button disabled={{if model.isSaving 'true' ''}}>Update</button> 
-	<button disabled={{if model.isSaving 'true' ''}} {{action 'deleteAuthor' model on='click'}}>Delete</button>
+	{{!-- <p>Full name: {{input type='text' value=model.fullName}}</p> --}}
+	<div class="row">
+    	<div class="input-field col s6">
+          	{{input  type="text" class="validate" value=model.fullName}}
+          	<label class="active" for="last_name">Full name:</label>
+        </div>
+    </div> 	
+
+	{{!-- <p>First name: {{input type='text' value=model.firstName}}</p>  --}}		
+    <div class="row">
+    	<div class="input-field col s6">
+          	{{input  type="text" class="validate" value=model.firstName}}
+          	<label class="active" for="last_name">First name:</label>
+        </div>
+    </div>     
+
+	{{!-- <p>Last name: {{input type='text' value=model.lastName}}</p>  --}}
+    <div class="row">
+    	<div class="input-field col s6">
+          	{{input  type="text" class="validate" value=model.lastName}}
+          	<label class="active" for="last_name">Last name:</label>
+        </div>
+    </div> 
+
+	{{!-- <p>Nickname: {{input type='text' value=model.nickname}}</p>  --}}
+    <div class="row">
+		<div class="input-field col s6">
+          	{{input  type="text" class="validate" value=model.nickname}}
+          	<label class="active" for="last_name">Nickname:</label>
+        </div>
+    </div> 
+
+	{{!-- <p>Age: {{input type='number' value=model.age}}</p>  --}}
+	<div class="row">
+		<div class="input-field col s6">
+          	{{input  type="number" class="validate" value=model.age}}
+          	<label class="active" for="last_name">Age:</label>
+        </div>
+    </div> 
+    
+	<button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}}>Update</button> 
+	<button class="waves-effect waves-light btn" disabled={{if model.isSaving 'true' ''}} {{action 'deleteAuthor' model on='click'}}>Delete</button>
 </form>

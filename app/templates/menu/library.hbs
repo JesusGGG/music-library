@@ -7,16 +7,12 @@
 			    	<p>Title: {{musicBook.title}}</p>
 			    	<span class="title">Author: {{musicBook.author.fullName}}</span><br>
 			    	<span class="title">Price: {{musicBook.price}}</span>
-			      	{{!-- {{#link-to 'menu.album' musicBook.id}}<i class="material-icons">Edit</i>{{/link-to}} --}}
 			    	<a href="#!" class="secondary-content">
 			    		<i class="material-icons">
-			    			
-			    			{{#link-to 'menu.album' musicBook.id}}<img id="img-set-album" src='https://image.flaticon.com/icons/svg/181/181550.svg' alt="" class="circle">{{/link-to}}
-			    			
+			    			{{#link-to 'menu.album' musicBook.id}}<img id="img-set-album" src='https://image.flaticon.com/icons/svg/181/181550.svg' alt="" class="circle">
+			    			{{/link-to}}
 			    		</i>
 			    	</a>
-			      	{{!--  --}}
-			      	{{!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> --}}
 			    </li>
 			</ul>
 		</div>
@@ -25,7 +21,9 @@
 </div>
 
 <div class="fixed-action-btn">
-  {{#link-to 'menu.add-album'}}<a class="btn-floating btn-large red">
-    <i class="large material-icons">+</i>
-  </a>{{/link-to}}
+	{{#link-to 'menu.add-album'}}
+		<a class="btn-floating btn-large red">
+    		<i class="large material-icons">+</i>
+  		</a>
+  	{{/link-to}}
 </div>

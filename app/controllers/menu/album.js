@@ -8,6 +8,6 @@ export default Controller.extend({
 			changeAuthor (author) {
 				let book = this.get('model.musicBook');
 				book.set('author', author);
-			}
+			} 
 	}
 });
