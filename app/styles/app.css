@@ -89,3 +89,10 @@ body {
 .btn, .btn-large, .btn-small {
     background-color:  #00BBD3;
 }
+
+
+.collection .collection-item.avatar:not(.circle-clipper)>.circle, .collection .collection-item.avatar :not(.circle-clipper)>.circle {
+    position: absolute;
+    width: 70px;  
+    height: 70px;
+}

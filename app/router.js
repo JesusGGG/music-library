@@ -20,7 +20,7 @@ Router.map(function() {
     this.route('author');
     this.route('shopping-cart');
     this.route('album', {path: 'menu/album/:id'});
-    this.route('author-data');
+    this.route('author-data', {path: 'menu/author-data/:id'});
     this.route('sale');
     this.route('sold-book');
     this.route('add-album');

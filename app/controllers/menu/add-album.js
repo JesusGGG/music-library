@@ -4,29 +4,38 @@ export default Controller.extend({
 	
 	actions:{
 		addAlbum(){
-			let imgUrl = this.get('imgUrl');
-			let title = this.get('title');
-			let author = this.get('author');
-			let price = this.get('price');
-			let newAlbum = this.store.createRecord('musicBook',{imgUrl,title,author,price});
-			newAlbum.save()
-				// .then(() => {
-  		// 			this.transitionTo('menu.library');
-  		// 			alert('Added successfully');  					
-				// })
-				// .catch(() => {
-  		// 			alert('Sorry!, An error was found');
-				// });
-			this.set('imgUrl','');
-			this.set('title','');
-			this.set('author','');
-			this.set('price','');
+			var imgUrl = this.get('imgUrl');
+			var title = this.get('title');
+			var author = this.get('author');
+			var price = this.get('price');
+			if (imgUrl && title && author && price){
+				var newAlbum = this.store.createRecord('musicBook',{imgUrl,title,author,price});
+				newAlbum.save()
+					.then(() => {
+	  					alert('Added successfully');  					
+	  					this.transitionTo('menu.library');
+						this.set('imgUrl','');
+						this.set('title','');
+						this.set('author','');
+						this.set('price','');
+					})
+					.catch(() => {
+	  					alert('Sorry! An error was found');
+						this.transitionTo('menu.library');
+						this.set('imgUrl','');
+						this.set('title','');
+						this.set('author','');
+						this.set('price','');						
+					});
+			} else {
+				alert('Sorry! Missed data');
+			}
 		},
 		showAuthors () {
 			this.toggleProperty('isChangingAuthor');
 		},
 		changeAuthor (author) {
-			let book = this.get('model.musicBook');
+			var book = this.get('model.musicBook');
 			book.set('author', author);
 		}
 	}
