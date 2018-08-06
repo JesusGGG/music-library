@@ -25,6 +25,7 @@ Router.map(function() {
     this.route('sold-book');
     this.route('add-album');
     this.route('add-author');
+    this.route('new-sale');
   });
 });
 

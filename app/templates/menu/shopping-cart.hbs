@@ -1,7 +1,18 @@
-<p>Total: {{sum}}</p> 		
+{{!-- <p>Total: {{sum}}</p> 		
 <p>Average: {{get-average shoppingCart.musicBooks}}</p> 
 <br><br>
 {{#each shoppingCart.musicBooks as |book|}}
 	<label>Title: {{book.title}}</label><br>
 	<label>Price: {{book.price}}</label><br><br>
+{{/each}} --}}
+
+{{#each model as |soldBook|}}
+	<label class="active" for="last_name">Sale: {{soldBook.id}}</label><br>
+	<label class="active" for="last_name">Date: {{sale.date}}</label><br>
+    <a href="#!" class="secondary-content">
+		<i class="material-icons">
+			{{#link-to 'menu.sale-data' soldBook.id}}<img id="img-set-album" src='https://image.flaticon.com/icons/svg/149/149294.svg' alt="" class="circle">
+			{{/link-to}}
+		</i>
+	</a>
 {{/each}}
